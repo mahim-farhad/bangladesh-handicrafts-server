@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendors",
+  "info": {
+    "singularName": "vendor",
+    "pluralName": "vendors",
+    "displayName": "Vendor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vendorId": {
+      "type": "customField",
+      "customField": "plugin::strapi-advanced-uuid.uuid"
+    },
+    "vendorName": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "yearsOfOperation": {
+      "type": "integer",
+      "unique": false,
+      "required": true
+    },
+    "vendorLogo": {
+      "type": "string",
+      "required": false,
+      "unique": false
+    },
+    "likes": {
+      "type": "integer",
+      "required": true
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "vendor"
+    },
+    "vendorSlug": {
+      "type": "uid",
+      "targetField": "vendorName",
+      "required": true
+    }
+  }
+}
