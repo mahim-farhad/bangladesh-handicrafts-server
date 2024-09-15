@@ -45,6 +45,10 @@
       "type": "uid",
       "targetField": "vendorName",
       "required": true
+    },
+    "vendorBanner": {
+      "type": "string",
+      "unique": true
     }
   }
 }
